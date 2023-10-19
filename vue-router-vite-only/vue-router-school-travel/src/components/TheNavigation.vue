@@ -5,5 +5,5 @@
         <router-link to="/hawaii">Hawaii</router-link>
         <router-link to="/jamaica">Jamaica</router-link>
         <router-link to="/panama">Panama</router-link>
-      </div>
+      </div>1
 </template>
