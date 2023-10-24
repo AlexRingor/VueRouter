@@ -6,6 +6,7 @@
       :to="{name: 'destination.show', params: {id: destination.id, slug: destination.slug}}"
       >{{ destination.name }}
       </router-link>
+      <router-link :to="{name: 'protected'}">Dashboard</router-link>
     </div>
 </template>
 
