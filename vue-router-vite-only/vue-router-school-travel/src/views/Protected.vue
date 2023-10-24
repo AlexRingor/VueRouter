@@ -16,8 +16,8 @@ export default {
         logout() {
             window.user = null
             this.username = window.user
-            this.$router.push({name: 'login'})
-        }
+            this.$router.push({name: 'Home'})
+        } 
     }
 }
 </script>
