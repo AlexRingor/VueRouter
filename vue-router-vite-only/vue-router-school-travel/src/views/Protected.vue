@@ -1,11 +1,13 @@
 <template>
     <div>
-        <h1>Greetings, {{username}}</h1>
-        <button class="btn logout" @click="logout">Logout</button>
+        <div>
+            <h1>Greetings, {{username}}</h1>
+            <button class="btn logout" @click="logout">Logout</button>
+        </div>
+        <router-link :to="{name: 'invoices'}">
+            <button>Invoices</button>
+        </router-link>
     </div>
-    <router-link :to="{name: 'invoices'}">
-        <button>Invoices</button>
-    </router-link>
 </template>
 
 <script>
@@ -19,7 +21,8 @@ export default {
         logout() {
             window.user = null
             this.username = window.user
-            this.$router.push({name: 'Home'})
+            this.$router.push({name: 'Home', query: {logout: null}})
+            // this.$router.replace({name: 'Home', query: {logout: null}})
         } 
     }
 }

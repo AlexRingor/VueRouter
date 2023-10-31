@@ -9,8 +9,15 @@ export default {
 <template>
     <TheNavigation/>
       <div class="container">
-        <router-view v-slot="{Component}">
-          <transition name="slide" move="out-in" >
+        <!-- LeftSideBar -->
+        <router-view v-slot="{Component}" class="view left-sidebar" name="LeftSideBar">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" :key="$route.path"></component>
+          </transition>
+        </router-view>
+        <!-- main view -->
+        <router-view v-slot="{Component}" class="main-view">
+          <transition name="fade" mode="out-in">
             <component :is="Component" :key="$route.path"></component>
           </transition>
         </router-view>
@@ -18,14 +25,25 @@ export default {
 </template>
 
 <style lang="css">
-  .slide-enter-active, 
-  .slide-leave-active {
-    transition: opacity 1s, transform 1s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+  .container {
+    display: flex;
   }
 
-  .slide-enter-from, 
-  .slide-leave-to{
-    opacity: 0;
-    transform: translateX(-30%)
+  .left-sidebar {
+    width: 20%;
+  }
+
+  .main-view {
+    width: 100%;
   }
 </style>
