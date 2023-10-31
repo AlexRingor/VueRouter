@@ -8,7 +8,6 @@
       </AppLink>
       <AppLink :to="{name: 'protected'}">Dashboard</AppLink>
       <AppLink to="https://google.com">Google.com</AppLink>
-      <h1>Test</h1>
     </div>
 </template>
 
